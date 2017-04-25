@@ -1,7 +1,10 @@
 package com.example.a127107.co_listview;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -12,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     ListView lv;
     ArrayAdapter aa;
     ArrayList<Year> year;
+    YearAdapter yearAdapter = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,18 @@ public class MainActivity extends AppCompatActivity {
         //  each row and the food String array together
         aa = new YearAdapter(this, R.layout.firstactivitylistview, year);
         lv.setAdapter(aa);
+
+        yearAdapter = new YearAdapter(this, R.layout.row_1, year);
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getBaseContext(),SecondActivity.class);
+                intent.putExtra("module","C202");
+                startActivity(intent);
+
+            }
+        });
 
     }
 }

@@ -9,20 +9,11 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class YearAdapter extends ArrayAdapter<Year>{
+public class YearAdapter extends ArrayAdapter{
 
     private ArrayList<Year> year;
     private Context context;
     private TextView tvYear;
-
-
-    public YearAdapter(Context context, int resource, ArrayList<Year> objects){
-        super(context, resource, objects);
-        // Store the food that is passed to this adapter
-        year = objects;
-        // Store Context object as we would need to use it later
-        this.context = context;
-    }
 
     // getView() is the method ListView will call to get the
     //  View object every time ListView needs a row
@@ -48,4 +39,12 @@ public class YearAdapter extends ArrayAdapter<Year>{
         // Set the image to star or nostar accordingly
         return rowView;
     }
+    public YearAdapter(Context context, int resource, ArrayList<Year> objects){
+        super(context, resource, objects);
+        // Store the food that is passed to this adapter
+        year = objects;
+        // Store Context object as we would need to use it later
+        this.context = context;
+    }
+
 }
