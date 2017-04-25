@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Co_ListView</string>
+    <string name="year">year 2</string>
+    <string name="year2">YEAR 2</string>
 </resources>
