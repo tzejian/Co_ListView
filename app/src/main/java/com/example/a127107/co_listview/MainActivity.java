@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lv = (ListView) this.findViewById(R.id.lvYear);
+        lv = (ListView) this.findViewById(R.id.LvCourse);
 
         // Create a few food objects in Food array
         year = new ArrayList<Year>();
