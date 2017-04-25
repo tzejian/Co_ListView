@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class SecondActivity extends AppCompatActivity {
 
     ImageView iv;
-    TextView tv;
+    TextView tvYear, tvModule;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +21,20 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.row_1);
 
         iv = (ImageView)findViewById(R.id.ivModule);
-        tv = (TextView)findViewById(R.id.module);
+        tvYear = (TextView)findViewById(R.id.textViewYear);
+        tvModule = (TextView)findViewById(R.id.module);
+
+
+        Intent intentReceiveYear = getIntent();
+        String strYear = intentReceiveYear.getStringExtra("year");
+        tvYear.setText(strYear);
 
         Intent intentReceiveModule = getIntent();
-        String strMod = intentReceiveModule.getStringExtra("module");
+        String modules = intentReceiveModule.getStringExtra("module");
         iv.setImageResource(R.drawable.star);
-        tv.setText(strMod);
+        tvModule.setText(modules);
+
+
     }
 
 }
